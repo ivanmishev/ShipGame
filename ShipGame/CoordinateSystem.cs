@@ -42,20 +42,18 @@ namespace ShipGame
 
         public string[,] getMatrix()
         {
-            char firstX = 'A';
-            char nextCharX = (char)((int)firstX + 1);
 
             string[,] test = new string[56,56];
             for (int i = 0; i <= 7; i++)
             {
+                char firstX = 'A';
+                char nextCharX = (char)((int)firstX + i);
                 for (int g = 0; g <= 7; g++)
                 {
                     char firstY = 'I';
                     char nextCharY = (char)((int)firstY + g);
-                    test[i, g] = " " + firstX + nextCharY;
+                    test[i, g] = "" + nextCharX + nextCharY;
                 }
-                nextCharX = (char)((int)firstX + 1);
-                firstX = nextCharX;
             }
             return test;
         }

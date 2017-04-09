@@ -15,6 +15,9 @@ namespace ShipGame
         private static int origRow;
         private static int origCol;
 
+        private static readonly char[] X_CORDINATES = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
+        private static readonly char[] Y_CORDINATES = new char[] { 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P' };
+
         [DllImport("User32.dll")]
         public static extern IntPtr GetDC(IntPtr hwnd);
         [DllImport("User32.dll")]
@@ -56,6 +59,27 @@ namespace ShipGame
                 }
             }
             return test;
+        }
+
+        public List<KeyValuePair<char, int>> bindLettersToCursorPosition()
+        {
+            List<KeyValuePair<char, int>> kvpList = new List<KeyValuePair<char, int>>();
+
+            int tempX = origRow;
+            int tempY = origCol;
+            //Fill rows
+            foreach (char c in Y_CORDINATES)
+            {
+                kvpList.Add(new KeyValuePair<char, int>(c, tempY));
+                tempY += 2;
+            }
+            //Fill cols
+            foreach (char c in X_CORDINATES)
+            {
+                kvpList.Add(new KeyValuePair<char, int>(c, tempX));
+                tempX += 5;
+            }
+            return kvpList;
         }
     }
 }

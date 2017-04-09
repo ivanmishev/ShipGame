@@ -63,6 +63,10 @@ namespace ShipGame
             Console.SetCursorPosition(0,40);
 
             Logger.Write(Console.CursorLeft +"  " +  Console.CursorTop);
+
+            AI ai = new AI();
+            ai.test();
+
             //Console.WriteLine("Press ESC to stop");
             do
             {

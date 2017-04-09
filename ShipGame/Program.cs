@@ -59,7 +59,7 @@ namespace ShipGame
             Logger.Write(hs1.ShipName + " " + hs1.ShipPosition[0]);
 
             CoordinateSystem coordSys = new CoordinateSystem(0, 0);
-            CoordinateSystem.WriteAt("O", 10, 7);
+            CoordinateSystem.WriteAt("O", 5, 3);
             Console.SetCursorPosition(0,40);
 
             Logger.Write(Console.CursorLeft +"  " +  Console.CursorTop);

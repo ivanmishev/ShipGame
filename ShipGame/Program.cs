@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShipGame
@@ -53,24 +54,26 @@ namespace ShipGame
             Ships hs1 = new Ships(ShipType.huge, cords);
 
 
-            Console.WriteLine(sh1.ShipName + " ");
-            Console.WriteLine(sh2.ShipName + " ");
-            Console.WriteLine(hs1.ShipName + " " + hs1.ShipPosition[0]);
+            Logger.Write(sh1.ShipName + " " + sh1.ShipPosition[0]);
+            Logger.Write(sh2.ShipName + " " + sh2.ShipPosition[0]);
+            Logger.Write(hs1.ShipName + " " + hs1.ShipPosition[0]);
 
             CoordinateSystem coordSys = new CoordinateSystem(0, 0);
             CoordinateSystem.WriteAt("O", 10, 7);
             Console.SetCursorPosition(0,40);
 
-            Console.Write(Console.CursorLeft +"  " +  Console.CursorTop);
+            Logger.Write(Console.CursorLeft +"  " +  Console.CursorTop);
             //Console.WriteLine("Press ESC to stop");
             do
             {
                 //while (!Console.KeyAvailable)
                 {
-                    Console.Out.Write(Console.ReadKey(true).Key);
+                    Logger.Write(Console.ReadKey(true).Key.ToString());
                 }
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
-    }
+
+            Logger.SaveToFile();
+        }
 
         /// <summary>
         /// Paint a background color

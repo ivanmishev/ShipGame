@@ -20,7 +20,7 @@ namespace ShipGame
             {
                 startingLine = Console.CursorTop;
             }
-            if (Console.CursorTop == startingLine + LOG_LENGTH)
+            if (Console.CursorTop >= startingLine + LOG_LENGTH)
             {
                 CleaLog();
             }

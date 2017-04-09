@@ -67,12 +67,17 @@ namespace ShipGame
             AI ai = new AI();
             ai.test();
 
+            string[,] matrix = coordSys.getMatrix();
+            List<string> validMoves = matrix.Cast<string>().ToList();
+            string input;
             //Console.WriteLine("Press ESC to stop");
             do
             {
-                //while (!Console.KeyAvailable)
-                {
-                    Logger.Write(Console.ReadKey(true).Key.ToString());
+                input = Console.ReadLine().TrimEnd(Environment.NewLine.ToCharArray()).Trim();
+                if (validMoves.IndexOf(input.ToUpper()) > -1) {
+                    Logger.Write("Player position: " + input);
+                } else {
+                    Logger.Write("Invalid move: " + input);
                 }
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 

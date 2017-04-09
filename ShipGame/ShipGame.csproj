@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.cs" />
-    <Compile Include="Cursor.cs" />
+    <Compile Include="CoordinateSystem.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Ocean.cs" />
     <Compile Include="Program.cs" />

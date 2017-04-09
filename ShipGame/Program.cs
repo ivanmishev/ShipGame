@@ -31,7 +31,15 @@ namespace ShipGame
         {
             SetBackgroundColor();
             Ocean ocean = new Ocean();
+            Console.Write("Player board");
+            Console.WriteLine();
             ocean.drawCordinates();
+
+            Console.WriteLine();
+            Console.Write("Computer board");
+            Console.WriteLine();
+            ocean.drawCordinates();
+
 
             origRow = Console.CursorTop;
             origCol = Console.CursorLeft;
@@ -49,8 +57,19 @@ namespace ShipGame
             Console.WriteLine(sh2.ShipName + " ");
             Console.WriteLine(hs1.ShipName + " " + hs1.ShipPosition[0]);
 
+            CoordinateSystem coordSys = new CoordinateSystem();
+            CoordinateSystem.WriteAt("O", 10, 7);
+            Console.SetCursorPosition(0,40);
 
-        }
+            //Console.WriteLine("Press ESC to stop");
+            do
+            {
+                //while (!Console.KeyAvailable)
+                {
+                    Console.Out.Write(Console.ReadKey(true).Key);
+                }
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+    }
 
         /// <summary>
         /// Paint a background color

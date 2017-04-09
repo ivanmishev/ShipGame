@@ -29,7 +29,7 @@ namespace ShipGame
 
         private static void CleaLog()
         {
-            for (int i = 0; i < LOG_LENGTH; i++)
+            for (int i = 0; i <= LOG_LENGTH; i++)
             {
                 Console.SetCursorPosition(0, startingLine + i);
                 Console.Write("\r" + new string(' ', Console.BufferWidth) + "\r");

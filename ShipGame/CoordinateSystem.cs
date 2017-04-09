@@ -12,8 +12,8 @@ namespace ShipGame
     {
         const ConsoleColor CURSOR_COLOR = ConsoleColor.DarkBlue;
 
-        public static int origRow;
-        public static int origCol;
+        private static int origRow;
+        private static int origCol;
 
         [DllImport("User32.dll")]
         public static extern IntPtr GetDC(IntPtr hwnd);
@@ -32,6 +32,12 @@ namespace ShipGame
                 Console.Clear();
                 Console.WriteLine(e.Message);
             }
+        }
+
+        public CoordinateSystem(int origCol, int origRow)
+        {
+            CoordinateSystem.origRow = origRow;
+            CoordinateSystem.origCol = origCol;
         }
     }
 }

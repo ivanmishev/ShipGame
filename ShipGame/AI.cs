@@ -8,5 +8,9 @@ namespace ShipGame
 {
     class AI
     {
+        private int cursorRow = 0;
+        private int cursorCol = 0;
+        private CoordinateSystem cs = new CoordinateSystem(0, 0);
+
     }
 }

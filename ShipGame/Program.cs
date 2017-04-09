@@ -57,10 +57,11 @@ namespace ShipGame
             Console.WriteLine(sh2.ShipName + " ");
             Console.WriteLine(hs1.ShipName + " " + hs1.ShipPosition[0]);
 
-            CoordinateSystem coordSys = new CoordinateSystem();
+            CoordinateSystem coordSys = new CoordinateSystem(0, 0);
             CoordinateSystem.WriteAt("O", 10, 7);
             Console.SetCursorPosition(0,40);
 
+            Console.Write(Console.CursorLeft +"  " +  Console.CursorTop);
             //Console.WriteLine("Press ESC to stop");
             do
             {
